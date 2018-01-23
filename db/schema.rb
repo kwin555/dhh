@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 20180123203256) do
   create_table "bios", force: :cascade do |t|
     t.string   "life"
     t.string   "person"
+    t.string   "dob"
+    t.string   "hobbies"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
