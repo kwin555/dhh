@@ -29,18 +29,52 @@
         Make a quick bio!
       </div>
       <div class="col-5 links">
-        <%= link_to 'Add More Bios', new_bio_path %>
+        <%= link_to 'Add New Bios', new_bio_path, data: {toggle: 'modal', target: '#myModal'} %>
       </div>
     </header>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+            <h4 class="modal-title" id="myModalLabel">Add Your Favorite Bio</h4>
+          </div>
+          <%= simple_form_for @bio do |f| %>
+            <div class="modal-body">
+              <%= f.input :person %>
+              <%= f.input :life %>
+              <%= f.input :dob %>
+              <%= f.input :hobbies %>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <%= f.submit 'Create', class: 'btn btn-danger' %>
+          </div>   
+          <% end %>
+        </div>
+      </div>
+    </div>
+
 
     <hr />
 
 
     <br class="clear" />
-
+  <div class="container">
+    <% if flash[:error].present? %>
+      <div class="col-10 offset-1 alert alert-danger">
+        <%= flash[:error].html_safe %>
+      </div>
+    <% end %>
     <div class="container">
       <%= yield %>
     </div>
+  </div>
     <div class="footer">
       <div class="container">
         <div class="row">

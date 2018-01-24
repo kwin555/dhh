@@ -1,6 +1,6 @@
 class BiosController < ApplicationController
   def index
-    @bio = Bio.first
+    @bio = Bio.order("RANDOM()").first
   end
 
   def new
@@ -8,7 +8,10 @@ class BiosController < ApplicationController
   end
 
   def create
-    Quote.create(bio_parmas)
+    @bio = Bio.create(bio_params)
+    if @bio.invalid?
+      flash[:error] = '<strong> Could not save</strong> the data you entered is invalid'
+    end
     redirect_to root_path
   end
 
