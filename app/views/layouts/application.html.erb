@@ -25,10 +25,10 @@
           </div>
         <% end %>
       </div>
-      <div class="col-4 slogan">
+      <div class="col col-sm-4 hidden-xs-down slogan">
         Make a quick bio!
       </div>
-      <div class="col-5 links">
+      <div class="col-10 offset-1 offset-sm-0 col-sm-5 links">
         <%= link_to 'Add New Bios', new_bio_path, data: {toggle: 'modal', target: '#myModal'} %>
       </div>
     </header>
@@ -46,10 +46,13 @@
           </div>
           <%= simple_form_for @bio do |f| %>
             <div class="modal-body">
-              <%= f.input :person %>
-              <%= f.input :life %>
-              <%= f.input :dob %>
-              <%= f.input :hobbies %>
+              <%= f.input :person, label: "Who do you want to add?", placeholder: "David Heinemeier Hannsson" %>
+              <br />
+              <%= f.input :life, label: "What is his/her story?", placeholder: "He is a Danish programer who created Ruby on Rails." %>
+              <br />
+              <%= f.input :dob, label: "When was he/she born?", placeholder: "October 15,1979" %>
+              <br />
+              <%= f.input :hobbies, label: "what do they like to do in their spare time?", placeholder: "race car driving and photography" %>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -78,10 +81,10 @@
     <div class="footer">
       <div class="container">
         <div class="row">
-          <div class="col-6">
+          <div class="col-12 col-sm-6">
             <%= link_to "More Bio? Click Me!", root_path, class: 'next-qsuote' %>
           </div>
-          <div class="col-6 footer-blurb">
+          <div class="col-12 col-sm-6 footer-blurb">
             Created in Houston,TX by Kevin Nguyen <br /> Need to get in touch? <a href="mailto:kev.ftw595@gmail.com">Email Me</a>
           </div>
         </div>

@@ -54,6 +54,22 @@
   font-size: 12px;
 }
 
+::selection {
+  background-color: #f84342;
+}
+
+h2 span {
+  color: #dddddd;
+  font-family: 'quicksandbold', sans-serif;
+  font-weight: bold;
+}
+
+@media (max-width: 750px) {
+  .footer-blurb {
+    text-align: left;
+  }
+}
+
 header {
   border-top: 9px solid #222222;
 }

@@ -3,10 +3,6 @@ class BiosController < ApplicationController
     @bio = Bio.order("RANDOM()").first
   end
 
-  def new
-    @bio = Bio.new
-  end
-
   def create
     @bio = Bio.create(bio_params)
     if @bio.invalid?
