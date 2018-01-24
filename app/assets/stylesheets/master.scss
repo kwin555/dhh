@@ -32,6 +32,26 @@
   color: black;
   font-size: 25px;
   border-bottom: 1px solid #dfdfdf;
+  font-family: 'quicksandregular', sans-serif;
+  font-weight: bold;
+}
+
+.slogan {
+  font-family: 'quicksanditalic';
+  padding-top: 26px;
+}
+
+.next-quote {
+  color: #406f99;
+  font-family: 'quicksandregular', sans-serif;
+  font-size: 20px;
+}
+
+.footer-blurb {
+  font-family: 'quicksanditalic';
+  padding-top: 26px;
+  text-align: right;
+  font-size: 12px;
 }
 
 header {
@@ -40,4 +60,14 @@ header {
 
 hr {
   clear: both; 
+}
+
+h1 {
+  font-family: 'quicksandbold', sans-serif;
+  font-weight: bold;
+  font-size: 56px;
+}
+
+h2 {
+  font-family: 'quicksandregular' sans-serif;
 }

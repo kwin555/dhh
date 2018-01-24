@@ -14,29 +14,46 @@
   <body>
     <header class="row">
       <div class="col-3">
-        <div class="circle">
-          <br />
-          Add 
-          <br />
-          Interesting
-          <br /> 
-          People
-        </div>
+        <%= link_to root_path do %>
+          <div class="circle">
+            <br />
+            Add 
+            <br />
+            Interesting
+            <br /> 
+            People
+          </div>
+        <% end %>
       </div>
       <div class="col-4 slogan">
         Make a quick bio!
       </div>
       <div class="col-5 links">
-        <%= link_to 'Add More Bios', '#' %>
+        <%= link_to 'Add More Bios', new_bio_path %>
       </div>
     </header>
 
     <hr />
 
+
     <br class="clear" />
 
-    
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-6">
+            <%= link_to "More Bio? Click Me!", root_path, class: 'next-qsuote' %>
+          </div>
+          <div class="col-6 footer-blurb">
+            Created in Houston,TX by Kevin Nguyen <br /> Need to get in touch? <a href="mailto:kev.ftw595@gmail.com">Email Me</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
 
   </body>
