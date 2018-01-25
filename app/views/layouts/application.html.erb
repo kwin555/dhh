@@ -44,7 +44,7 @@
             </button>
             <h4 class="modal-title" id="myModalLabel">Add Your Favorite Bio</h4>
           </div>
-          <%= simple_form_for @bio do |f| %>
+          <%= simple_form_for Bio.new do |f| %>
             <div class="modal-body">
               <%= f.input :person, label: "Who do you want to add?", placeholder: "David Heinemeier Hannsson" %>
               <br />
